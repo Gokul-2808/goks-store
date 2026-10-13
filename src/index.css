@@ -1,0 +1,236 @@
+/* ========================================
+   GOKS — GLOBAL STYLES
+   File: src/index.css
+======================================== */
+
+/* Import premium fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Theme Variables */
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #26352b;
+  background: #faf9f5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #294735;
+  --color-primary-dark: #1d3526;
+  --color-primary-light: #e8eee7;
+
+  --color-background: #faf9f5;
+  --color-surface: #ffffff;
+  --color-text: #26352b;
+  --color-muted: #777d74;
+  --color-border: #e8e7df;
+  --color-accent: #c4a574;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --container-width: 1240px;
+  --transition: all 0.3s ease;
+}
+
+/* HTML and Body */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+/* React Root */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-primary-dark);
+}
+
+/* Text */
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Buttons and Form Elements */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button,
+input,
+textarea,
+select {
+  outline-color: var(--color-accent);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Images and Icons */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Text Selection */
+::selection {
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7cec5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Reusable Container */
+.container {
+  width: min(var(--container-width), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Smooth Interactions */
+a,
+button,
+input,
+textarea,
+select {
+  transition: var(--transition);
+}
+
+/* Modal Background Scroll Control */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Tablet Responsive Styles */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
